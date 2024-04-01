@@ -17,3 +17,5 @@
 	defaultBranch = main
 [push]
 	followTags = true
+[core]
+	editor = nvim

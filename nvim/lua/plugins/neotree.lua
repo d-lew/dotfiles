@@ -8,8 +8,16 @@ return {
   },
   config = function()
     vim.keymap.set('n', '<leader>n', ':Neotree filesystem reveal right toggle<CR>')
-    -- close once a file has been selected
     require("neo-tree").setup({
+      -- show filtered files
+      filesystem = {
+        filtered_items = {
+          visible = true,
+        }
+      },
+      -- disable git status in tree
+      enable_git_status = false,
+      -- close once a file has been selected
       event_handlers = {
         {
           event = "file_opened",

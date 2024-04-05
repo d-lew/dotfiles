@@ -10,3 +10,11 @@ vim.g.mapleader = " "
 -- line numbers
 vim.opt.nu = true
 vim.opt.relativenumber = true
+
+-- no wrapping
+vim.opt.wrap = false
+
+-- search
+vim.keymap.set("n", "<leader>h", ":nohl<CR>")
+vim.opt.ignorecase = true
+vim.opt.smartcase = true

@@ -7,13 +7,13 @@ return {
     "MunifTanjim/nui.nvim",
   },
   config = function()
-    vim.keymap.set('n', '<leader>n', ':Neotree filesystem reveal right toggle<CR>')
+    vim.keymap.set("n", "<leader>n", ":Neotree filesystem reveal right toggle<CR>")
     require("neo-tree").setup({
       -- show filtered files
       filesystem = {
         filtered_items = {
           visible = true,
-        }
+        },
       },
       -- disable git status in tree
       enable_git_status = false,
@@ -23,9 +23,9 @@ return {
           event = "file_opened",
           handler = function(file_path)
             require("neo-tree.command").execute({ action = "close" })
-          end
+          end,
         },
-      }
+      },
     })
-  end
+  end,
 }

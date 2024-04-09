@@ -11,6 +11,7 @@ return {
         find_files = {
           follow = true,
           hidden = true,
+          no_ignore = true,
         },
         live_grep = {
           additional_args = { "-L", "--hidden" },

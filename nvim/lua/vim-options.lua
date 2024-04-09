@@ -15,7 +15,8 @@ vim.opt.relativenumber = true
 vim.opt.wrap = false
 
 -- search
-vim.keymap.set("n", "<leader>h", ":nohl<CR>")
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 

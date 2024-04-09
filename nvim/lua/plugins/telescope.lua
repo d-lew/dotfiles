@@ -5,7 +5,7 @@ return {
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = {
       defaults = {
-        file_ignore_patterns = { ".git" },
+        file_ignore_patterns = { ".git", "node_modules" },
       },
       pickers = {
         find_files = {

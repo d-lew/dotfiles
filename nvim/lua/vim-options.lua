@@ -18,3 +18,6 @@ vim.opt.wrap = false
 vim.keymap.set("n", "<leader>h", ":nohl<CR>")
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
+
+-- keymaps
+vim.keymap.set({ 'n', 'v' }, '<leader>cd', vim.diagnostic.open_float, {})

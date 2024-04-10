@@ -27,6 +27,7 @@ return {
         builtin.diagnostics({ bufnr = 0 })
       end, {})
       vim.keymap.set("n", "<leader>ad", builtin.diagnostics, {})
+      vim.keymap.set("n", "<leader>gr", builtin.lsp_references, {})
     end,
   },
   {

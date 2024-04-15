@@ -20,6 +20,10 @@ vim.opt.incsearch = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
+-- whitespace
+vim.opt.list = true
+vim.opt.listchars = { eol = "↲", space = "•" }
+
 -- keymaps
 vim.keymap.set({ "n", "v" }, "<leader>cd", vim.diagnostic.open_float, {})
 vim.keymap.set("n", "<Esc>", function()

@@ -22,4 +22,6 @@ vim.opt.smartcase = true
 
 -- keymaps
 vim.keymap.set({ "n", "v" }, "<leader>cd", vim.diagnostic.open_float, {})
-vim.keymap.set("n", "<Esc>", function () vim.cmd('noh') end)
+vim.keymap.set("n", "<Esc>", function()
+  vim.cmd("noh")
+end)

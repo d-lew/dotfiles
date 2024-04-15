@@ -29,3 +29,5 @@ vim.keymap.set({ "n", "v" }, "<leader>cd", vim.diagnostic.open_float, {})
 vim.keymap.set("n", "<Esc>", function()
   vim.cmd("noh")
 end)
+
+vim.diagnostic.config({ virtual_text = false, severity_sort = true })

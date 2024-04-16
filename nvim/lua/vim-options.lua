@@ -30,4 +30,6 @@ vim.keymap.set("n", "<Esc>", function()
   vim.cmd("noh")
 end)
 
+vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+
 vim.diagnostic.config({ virtual_text = false, severity_sort = true })

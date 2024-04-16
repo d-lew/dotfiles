@@ -20,6 +20,12 @@ vim.opt.incsearch = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
+-- highlight on yank
+vim.api.nvim_create_autocmd("TextYankPost", {
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+})
 -- whitespace
 vim.opt.list = true
 vim.opt.listchars = { eol = "↲", space = "•" }

@@ -1,6 +1,8 @@
 return {
   {
     "williamboman/mason-lspconfig.nvim",
+    lazy = true,
+    event = "BufNew",
     config = function()
       require("mason-lspconfig").setup({
         ensure_installed = { "lua_ls", "tsserver", "tailwindcss" },
@@ -9,6 +11,8 @@ return {
   },
   {
     "neovim/nvim-lspconfig",
+    lazy = true,
+    event = "BufNew",
     config = function()
       local lsp = require("lspconfig")
       local capabilities = require("cmp_nvim_lsp").default_capabilities()

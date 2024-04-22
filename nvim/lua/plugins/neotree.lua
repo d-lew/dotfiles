@@ -1,13 +1,19 @@
 return {
   "nvim-neo-tree/neo-tree.nvim",
   branch = "v3.x",
+  lazy = true,
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
     "MunifTanjim/nui.nvim",
   },
+  keys = {
+    {
+      "<leader>n",
+      ":Neotree filesystem reveal right toggle<CR>",
+    },
+  },
   config = function()
-    vim.keymap.set("n", "<leader>n", ":Neotree filesystem reveal right toggle<CR>")
     require("neo-tree").setup({
       -- show filtered files
       filesystem = {

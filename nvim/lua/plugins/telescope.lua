@@ -1,6 +1,44 @@
 return {
   {
     "nvim-telescope/telescope.nvim",
+    lazy = true,
+    keys = {
+      {
+        "<leader>ff",
+        function()
+          local builtin = require("telescope.builtin")
+          builtin.find_files()
+        end,
+      },
+      {
+        "<leader>fg",
+        function()
+          local builtin = require("telescope.builtin")
+          builtin.live_grep()
+        end,
+      },
+      {
+        "<leader>fd",
+        function()
+          local builtin = require("telescope.builtin")
+          builtin.diagnostics({ bufnr = 0 })
+        end,
+      },
+      {
+        "<leader>ad",
+        function()
+          local builtin = require("telescope.builtin")
+          builtin.diagnostics()
+        end,
+      },
+      {
+        "<leader>gr",
+        function()
+          local builtin = require("telescope.builtin")
+          builtin.lsp_references()
+        end,
+      },
+    },
     tag = "0.1.6",
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = {
@@ -17,33 +55,18 @@ return {
           additional_args = { "-L", "--hidden" },
         },
       },
-    },
-    config = function(_, opts)
-      require("telescope").setup(opts)
-      local builtin = require("telescope.builtin")
-      vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
-      vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
-      vim.keymap.set("n", "<leader>fd", function()
-        builtin.diagnostics({ bufnr = 0 })
-      end, {})
-      vim.keymap.set("n", "<leader>ad", builtin.diagnostics, {})
-      vim.keymap.set("n", "<leader>gr", builtin.lsp_references, {})
-    end,
-  },
-  {
-    "nvim-telescope/telescope-ui-select.nvim",
-    config = function()
-      local tele = require("telescope")
-      tele.setup({
-        extensions = {
+      config = function(_, opts)
+        opts["extensions"] = {
           ["ui-select"] = {
             require("telescope.themes").get_dropdown({
               initial_mode = "normal",
             }),
           },
-        },
-      })
-      require("telescope").load_extension("ui-select")
-    end,
+        }
+        require("telescope").setup(opts)
+        require("telescope").load_extension("ui-select")
+      end,
+    },
   },
+  { "nvim-telescope/telescope-ui-select.nvim", lazy = true },
 }

@@ -1,11 +1,11 @@
--- tabs
-vim.cmd("set expandtab")
-vim.cmd("set tabstop=2")
-vim.cmd("set softtabstop=2")
-vim.cmd("set shiftwidth=2")
-
 -- space as leader
 vim.g.mapleader = " "
+
+-- tabs
+vim.opt.expandtab = true
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
 
 -- line numbers
 vim.opt.nu = true
@@ -29,18 +29,5 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 -- whitespace
 vim.opt.list = true
 vim.opt.listchars = { eol = "↲", space = "•" }
-
--- keymaps
-vim.keymap.set({ "n", "v" }, "<leader>cd", vim.diagnostic.open_float, {})
-vim.keymap.set("n", "<Esc>", function()
-  vim.cmd("noh")
-end)
-
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
-
-vim.keymap.set("x", "<leader>p", [["_dP]])
-vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
-vim.keymap.set("n", "<leader>Y", [["+Y]])
-vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 vim.diagnostic.config({ virtual_text = false, severity_sort = true })

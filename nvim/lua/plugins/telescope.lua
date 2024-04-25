@@ -4,7 +4,7 @@ return {
     lazy = true,
     keys = {
       {
-        "<leader>ff",
+        "<C-p>",
         function()
           local builtin = require("telescope.builtin")
           builtin.find_files()
@@ -25,7 +25,7 @@ return {
         end,
       },
       {
-        "<leader>ad",
+        "<leader>gd",
         function()
           local builtin = require("telescope.builtin")
           builtin.diagnostics()
@@ -43,6 +43,7 @@ return {
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = {
       defaults = {
+        layout_strategy = "center",
         file_ignore_patterns = { ".git/", "node_modules/" },
       },
       pickers = {

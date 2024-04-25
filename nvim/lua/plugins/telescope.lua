@@ -55,18 +55,18 @@ return {
           additional_args = { "-L", "--hidden" },
         },
       },
-      config = function(_, opts)
-        opts["extensions"] = {
-          ["ui-select"] = {
-            require("telescope.themes").get_dropdown({
-              initial_mode = "normal",
-            }),
-          },
-        }
-        require("telescope").setup(opts)
-        require("telescope").load_extension("ui-select")
-      end,
     },
+    config = function(_, opts)
+      opts["extensions"] = {
+        ["ui-select"] = {
+          require("telescope.themes").get_cursor({
+            initial_mode = "normal",
+          }),
+        },
+      }
+      require("telescope").setup(opts)
+      require("telescope").load_extension("ui-select")
+    end,
   },
   { "nvim-telescope/telescope-ui-select.nvim", lazy = true },
 }

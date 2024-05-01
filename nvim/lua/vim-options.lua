@@ -30,4 +30,4 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 vim.opt.list = true
 vim.opt.listchars = { eol = "↲", space = "·", tab = "⇢ " }
 
-vim.diagnostic.config({ virtual_text = false, severity_sort = true })
+vim.diagnostic.config({ virtual_text = true, severity_sort = true })

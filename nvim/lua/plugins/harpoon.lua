@@ -3,7 +3,7 @@ return {
   dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim" },
   keys = {
     {
-      "<C-o>",
+      "<C-h>",
       function()
         local harpoon = require("harpoon")
         local finder = function()

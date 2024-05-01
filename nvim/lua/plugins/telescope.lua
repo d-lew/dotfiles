@@ -44,6 +44,7 @@ return {
     opts = {
       defaults = {
         layout_strategy = "center",
+        layout_config = { width = 0.8 },
         file_ignore_patterns = { ".git/", "node_modules/" },
       },
       pickers = {

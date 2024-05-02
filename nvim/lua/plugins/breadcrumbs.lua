@@ -1,15 +1,12 @@
 return {
-  "LunarVim/breadcrumbs.nvim",
-  dependencies = "SmiteshP/nvim-navic",
-  lazy = true,
-  event = "VeryLazy",
-  config = function()
-    require("nvim-navic").setup({
-      lsp = {
-        auto_attach = true,
-      },
-    })
-
-    require("breadcrumbs").setup()
-  end,
+  "utilyre/barbecue.nvim",
+  name = "barbecue",
+  version = "*",
+  dependencies = {
+    "SmiteshP/nvim-navic",
+    "nvim-tree/nvim-web-devicons",
+  },
+  opts = {
+    show_dirname = false,
+  },
 }

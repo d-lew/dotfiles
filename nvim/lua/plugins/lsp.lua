@@ -2,7 +2,7 @@ return {
   {
     "williamboman/mason-lspconfig.nvim",
     lazy = true,
-    event = "BufNew",
+    event = "VeryLazy",
     config = function()
       require("mason-lspconfig").setup()
       require("mason-lspconfig").setup_handlers({
@@ -24,7 +24,7 @@ return {
   {
     "neovim/nvim-lspconfig",
     lazy = true,
-    event = "BufNew",
+    event = "VeryLazy",
     config = function()
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})

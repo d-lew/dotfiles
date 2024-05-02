@@ -1,6 +1,8 @@
 return {
   "LunarVim/breadcrumbs.nvim",
   dependencies = "SmiteshP/nvim-navic",
+  lazy = true,
+  event = "VeryLazy",
   config = function()
     require("nvim-navic").setup({
       lsp = {

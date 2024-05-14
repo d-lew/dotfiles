@@ -8,7 +8,7 @@ return {
     require("gitblame").setup({
       enabled = false,
       date_format = "%r",
-      message_template = "  <author>, <date> • <summary>",
+      message_template = "  <author>, <date> • <summary> <<sha>>",
       message_when_not_committed = "",
     })
   end,

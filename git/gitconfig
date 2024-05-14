@@ -19,3 +19,5 @@
   followTags = true
 [core]
   editor = nvim
+[fetch]
+  prune = true

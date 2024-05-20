@@ -26,17 +26,8 @@ return {
     lazy = true,
     event = "VeryLazy",
     config = function()
-      local border = {
-        -- telescope style border
-        { "╭", "FloatBorder" },
-        { "─", "FloatBorder" },
-        { "╮", "FloatBorder" },
-        { "│", "FloatBorder" },
-        { "╯", "FloatBorder" },
-        { "─", "FloatBorder" },
-        { "╰", "FloatBorder" },
-        { "│", "FloatBorder" },
-      }
+      require("lspconfig.ui.windows").default_options.border = "rounded"
+      local border = "rounded"
       local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
       function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
         opts = opts or {}

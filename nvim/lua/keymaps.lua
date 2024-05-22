@@ -3,7 +3,13 @@ vim.keymap.set("n", "<Esc>", function()
   vim.cmd("noh")
 end)
 
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+vim.keymap.set("n", "<leader>f", function()
+  vim.lsp.buf.format({
+    filter = function(client)
+      return client.name == "null-ls"
+    end,
+  })
+end)
 
 vim.keymap.set("x", "<leader>p", [["_dP]])
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
